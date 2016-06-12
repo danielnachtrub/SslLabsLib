@@ -214,6 +214,12 @@ namespace SslLabsLib.Objects
         public OpenSslCcsResult OpenSslCcs { get; set; }
 
         /// <summary>
+        /// Results of the CVE-2016-2107 test
+        /// </summary>
+        [JsonProperty("openSSLLuckyMinus20")]
+        public OpenSslLuckyMinus20Result OpenSslLuckyMinus20 { get; set; }
+
+        /// <summary>
         /// True if the endpoint is vulnerable to POODLE; false otherwise
         /// </summary>
         [JsonProperty("poodle")]
@@ -267,7 +273,26 @@ namespace SslLabsLib.Objects
         /// </summary>
         [JsonProperty("logjam")]
         public bool LogJam { get; set; }
-		
+
+        /// <summary>
+        /// true if error occurred in drown test
+        /// </summary>
+        [JsonProperty("drownErrors")]
+        public bool DrownErrors { get; set; }
+
+        /// <summary>
+        /// true if server vulnerable to drown attack
+        /// </summary>
+        [JsonProperty("drownVulnerable")]
+        public bool DrownVulnerable { get; set; }
+
+        /// <summary>
+        /// server's HSTS policy
+        /// </summary>
+        [JsonProperty("hstsPolicy")]
+        public HstsPolicy HstsPolicy { get; set; }
+
+
         public EndpointDetails()
         {
             Key = new Key();
